@@ -3,5 +3,5 @@ validate:
 install:
 	composer install
 brain-games:
-	./bin/brain-games.php
+	./bin/brain-games
 
