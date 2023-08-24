@@ -2,11 +2,15 @@
     "name": "hexlet/code",
     "description": "first project",
     "type": "project",
+    "license":"proprietary",
     "autoload": {
         "psr-4": {
             "Hexlet\\Code\\": "src/"
         }
     },
+    "bin":[
+	"bin/brain-games"
+	],
     "authors": [
         {
             "name": "alexx",
