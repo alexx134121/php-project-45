@@ -8,11 +8,13 @@
             "Hexlet\\Code\\": "src/"
 	    },
         "files":[
-            "src/Cli.php"
+            "src/Cli.php",
+            "src/EvenGames.php"
 	    ]
 },
     "bin":[
-	"bin/brain-games"
+	"bin/brain-games",
+	"bin/brain-even"
 	],
     "authors": [
         {
