@@ -9,12 +9,15 @@
 	    },
         "files":[
             "src/Cli.php",
-            "src/EvenGames.php"
+            "src/Games/EvenGames.php",
+            "src/Games/CalcGames.php",
+            "src/Engine.php"
 	    ]
 },
     "bin":[
 	"bin/brain-games",
-	"bin/brain-even"
+	"bin/brain-even",
+	"bin/brain-calc"
 	],
     "authors": [
         {
