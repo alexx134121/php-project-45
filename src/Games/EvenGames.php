@@ -9,6 +9,7 @@ use function cli\prompt;
 
 function run(): ?array
 {
+    $answers = [];
     $num = rand(0, 100);
     line('Answer "yes" if the number is even, otherwise answer "no".');
     line("Question: $num");

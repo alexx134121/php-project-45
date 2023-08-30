@@ -8,6 +8,7 @@ use function cli\prompt;
 
 function run(): ?array
 {
+    $answers = [];
     line('What is the result of the expression?');
     $operations = ['-', '+', '*'];
     $firstArg = rand(0, 100);

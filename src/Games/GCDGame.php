@@ -8,6 +8,7 @@ use function cli\line;
 
 function run(): ?array
 {
+    $answers = [];
     line('Find the greatest common divisor of given numbers.');
     $a = rand(0, 100);
     $b = rand(0, 100);

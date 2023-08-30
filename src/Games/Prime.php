@@ -9,6 +9,7 @@ use function BrainGames\Engine\check;
 
 function run(): ?array
 {
+    $answers = [];
     line('Answer "yes" if given number is prime. Otherwise answer "no".');
     $a = rand(1, 3571);
     $isPrime = isPrime($a);

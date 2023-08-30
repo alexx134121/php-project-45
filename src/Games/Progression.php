@@ -8,6 +8,7 @@ use function BrainGames\Engine\check;
 
 function run(): ?array
 {
+    $answers = [];
     line('What number is missing in the progression?');
     $diff = rand(1, 10);
     $length = rand(5, 15);
