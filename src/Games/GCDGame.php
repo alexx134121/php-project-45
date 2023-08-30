@@ -19,8 +19,8 @@ function run(): ?array
 
 function getGCD(int $a, int $b): int
 {
-    $a=abs($a);
-    $b=abs($b);
+    $a = abs($a);
+    $b = abs($b);
     if ($a < $b) {
         $tmp = $a;
         $a = $b;

@@ -42,7 +42,7 @@ function getUserName(): string
 
 function selectGame(string $game): ?array
 {
-    $result=[];
+    $result = [];
     switch ($game) {
         case 'even':
             $result = evenGame();
@@ -64,7 +64,7 @@ function selectGame(string $game): ?array
 }
 function check(string $userAnswer, string $correctAnswer): ?array
 {
-    $result=[];
+    $result = [];
     if ($correctAnswer == $userAnswer) {
         return null;
     } else {
