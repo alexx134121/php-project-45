@@ -14,7 +14,9 @@ function run(): ?array
     line("Question: $a $b");
     $correctAnswer = getGCD($a, $b);
     $answer = intval(prompt("Your answer"));
-    return check($answer, $correctAnswer);
+    $answers[0] = $correctAnswer;
+    $answers[1] = $answer;
+    return check($answers);
 }
 
 function getGCD(int $a, int $b): int

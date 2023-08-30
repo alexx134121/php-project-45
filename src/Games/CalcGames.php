@@ -17,7 +17,9 @@ function run(): ?array
     $expression = "$firstArg $operation $secondArg";
     line("Question: $expression");
     $answer = floatval(prompt("Your answer"));
-    return check($answer, $correctAnswer);
+    $answers[0] = $correctAnswer;
+    $answers[1] = $answer;
+    return check($answers);
 }
 
 function calc(float $firstArg, float $secondArg, string $operation): ?float

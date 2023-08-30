@@ -19,7 +19,9 @@ function run(): ?array
     $question = implode(" ", $progression);
     line("Question: $question");
     $answer = intval(prompt("Your answer"));
-    return check($answer, $correctAnswer);
+    $answers[0] = $correctAnswer;
+    $answers[1] = $answer;
+    return check($answers);
 }
 
 function arithmeticProgression(int $initial, int $diff, int $length): array

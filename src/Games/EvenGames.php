@@ -15,7 +15,9 @@ function run(): ?array
     $isEven = isEven($num);
     $correctAnswer = boolToStringAnswer($isEven);
     $answer = strtolower(prompt("Your answer"));
-    return check($answer, $correctAnswer);
+    $answers[0] = $correctAnswer;
+    $answers[1] = $answer;
+    return check($answers);
 }
 
 function isEven(int $num): bool

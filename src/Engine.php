@@ -62,8 +62,9 @@ function selectGame(string $game): ?array
     }
     return $result;
 }
-function check(string $userAnswer, string $correctAnswer): ?array
+function check(array $answers): ?array
 {
+    [$correctAnswer, $userAnswer] = $answers;
     $result = [];
     if ($correctAnswer == $userAnswer) {
         return null;
