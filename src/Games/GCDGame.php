@@ -17,7 +17,7 @@ function run(): ?array
     return check($answer, $correctAnswer);
 }
 
-function getGCD(int $a,int $b): int
+function getGCD(int $a, int $b): int
 {
     if ($a < $b) {
         $tmp = $a;
@@ -33,5 +33,4 @@ function getGCD(int $a,int $b): int
         $b = $r;
     }
     return $b;
-
 }

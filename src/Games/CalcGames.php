@@ -6,7 +6,7 @@ use function BrainGames\Engine\check;
 use function cli\line;
 use function cli\prompt;
 
-function calcGame():?array
+function run(): ?array
 {
     line('What is the result of the expression?');
     $operations = ['-', '+', '*'];
@@ -17,23 +17,22 @@ function calcGame():?array
     $expression = "$firstArg $operation $secondArg";
     line("Question: $expression");
     $answer = floatval(prompt("Your answer"));
-    return check($answer,$correctAnswer);
+    return check($answer, $correctAnswer);
 }
 
-function calc(float $firstArg, float $secondArg,string $operation): ?float
+function calc(float $firstArg, float $secondArg, string $operation): ?float
 {
-    $result=null;
-    switch ($operation){
+    $result = null;
+    switch ($operation) {
         case '+':
-            $result=$firstArg+$secondArg;
+            $result = $firstArg + $secondArg;
             break;
         case '-':
-            $result=$firstArg-$secondArg;
+            $result = $firstArg - $secondArg;
             break;
         case '*':
-            $result=$firstArg*$secondArg;
+            $result = $firstArg * $secondArg;
             break;
     }
     return $result;
 }
-

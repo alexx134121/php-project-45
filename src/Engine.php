@@ -4,10 +4,14 @@ namespace BrainGames\Engine;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Games\CalcGames\calcGame;
-use function BrainGames\Games\EvenGames\evenGame;
+use function BrainGames\Games\CalcGames\run as calcGame;
+use function BrainGames\Games\EvenGames\run as evenGame;
 use function BrainGames\Games\GCDGame\run as GCDGame;
 use function BrainGames\Games\Progression\run as ProgressionGame;
+use function BrainGames\Games\Prime\run as PrimeGame;
+
+const POSITIVE_ANSWER = 'yes';
+const NEGATIVE_ANSWER = 'no';
 
 function game(string $game): void
 {
@@ -36,7 +40,7 @@ function getUserName(): string
     return $userName;
 }
 
-function selectGame(string $game):?array
+function selectGame(string $game): ?array
 {
     switch ($game) {
         case 'even':
@@ -51,10 +55,13 @@ function selectGame(string $game):?array
         case 'progression':
             $result = ProgressionGame();
             break;
+        case 'prime':
+            $result = PrimeGame();
+            break;
     }
     return $result;
 }
-function check($userAnswer,$correctAnswer): ?array
+function check($userAnswer, $correctAnswer): ?array
 {
     if ($correctAnswer == $userAnswer) {
         return null;
@@ -63,4 +70,9 @@ function check($userAnswer,$correctAnswer): ?array
         $result[1] = $correctAnswer;
         return $result;
     }
+}
+
+function boolToStringAnswer(bool $val): string
+{
+    return strtolower(($val) ? POSITIVE_ANSWER : NEGATIVE_ANSWER);
 }

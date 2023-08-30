@@ -1,11 +1,12 @@
 <?php
+
 namespace BrainGames\Games\Progression;
 
 use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\check;
 
-function run()
+function run(): ?array
 {
     line('What number is missing in the progression?');
     $diff = rand(1, 10);
@@ -21,7 +22,7 @@ function run()
     return check($answer, $correctAnswer);
 }
 
-function arithmeticProgression(int $initial,int $diff,int $length):array
+function arithmeticProgression(int $initial, int $diff, int $length): array
 {
     $progression = [];
     for ($i = 1; $i <= $length; $i++) {
