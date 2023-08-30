@@ -23,7 +23,7 @@ function game(string $game): void
             line("Correct!");
         } else {
             [$answer, $correctAnswer] = $result;
-            line("'$answer' is wrong answer ;(. Correct answer was '$correctAnswer'.\nLet's try again, $userName");
+            line("'$answer' is wrong answer ;(. Correct answer was '$correctAnswer'.\nLet's try again, $userName!");
             return;
         }
         $i++;
