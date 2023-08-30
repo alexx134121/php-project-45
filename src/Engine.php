@@ -7,6 +7,7 @@ use function cli\prompt;
 use function BrainGames\Games\CalcGames\calcGame;
 use function BrainGames\Games\EvenGames\evenGame;
 use function BrainGames\Games\GCDGame\run as GCDGame;
+use function BrainGames\Games\Progression\run as ProgressionGame;
 
 function game(string $game): void
 {
@@ -46,6 +47,9 @@ function selectGame(string $game):?array
             break;
         case 'gcd':
             $result = GCDGame();
+            break;
+        case 'progression':
+            $result = ProgressionGame();
             break;
     }
     return $result;

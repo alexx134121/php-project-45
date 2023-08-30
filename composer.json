@@ -2,25 +2,27 @@
     "name": "hexlet/code",
     "description": "first project",
     "type": "project",
-    "license":"proprietary",
+    "license": "proprietary",
     "autoload": {
         "psr-4": {
             "Hexlet\\Code\\": "src/"
-	    },
-        "files":[
+        },
+        "files": [
             "src/Cli.php",
             "src/Games/EvenGames.php",
             "src/Games/CalcGames.php",
             "src/Games/GCDGame.php",
+            "src/Games/Progression.php",
             "src/Engine.php"
-	    ]
-},
-    "bin":[
-	"bin/brain-games",
-	"bin/brain-even",
-	"bin/brain-calc",
-        "bin/brain-gcd"
-	],
+        ]
+    },
+    "bin": [
+        "bin/brain-games",
+        "bin/brain-even",
+        "bin/brain-calc",
+        "bin/brain-gcd",
+        "bin/brain-progression"
+    ],
     "authors": [
         {
             "name": "alexx",
