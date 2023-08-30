@@ -2,6 +2,7 @@
 
 namespace BrainGames\Games\CalcGames;
 
+use function BrainGames\Engine\check;
 use function cli\line;
 use function cli\prompt;
 
@@ -16,13 +17,7 @@ function calcGame():?array
     $expression = "$firstArg $operation $secondArg";
     line("Question: $expression");
     $answer = floatval(prompt("Your answer"));
-    if ($correctAnswer == $answer) {
-        return null;
-    } else {
-        $result[0] = $answer;
-        $result[1] = $correctAnswer;
-        return $result;
-    }
+    return check($answer,$correctAnswer);
 }
 
 function calc(float $firstArg, float $secondArg,string $operation): ?float

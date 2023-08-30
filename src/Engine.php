@@ -6,6 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Games\CalcGames\calcGame;
 use function BrainGames\Games\EvenGames\evenGame;
+use function BrainGames\Games\GCDGame\run as GCDGame;
 
 function game(string $game): void
 {
@@ -43,6 +44,19 @@ function selectGame(string $game):?array
         case 'calc':
             $result = calcGame();
             break;
+        case 'gcd':
+            $result = GCDGame();
+            break;
     }
     return $result;
+}
+function check($userAnswer,$correctAnswer): ?array
+{
+    if ($correctAnswer == $userAnswer) {
+        return null;
+    } else {
+        $result[0] = $userAnswer;
+        $result[1] = $correctAnswer;
+        return $result;
+    }
 }

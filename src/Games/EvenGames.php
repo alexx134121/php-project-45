@@ -2,6 +2,7 @@
 
 namespace BrainGames\Games\EvenGames;
 
+use function BrainGames\Engine\check;
 use function cli\line;
 use function cli\prompt;
 
@@ -16,25 +17,13 @@ function evenGame(): ?array
     $isEven = isEven($num);
     $correctAnswer = getCorrectAnswer($isEven);
     $answer = strtolower(prompt("Your answer"));
-    if (isValidAnswer($answer) && $answer === $correctAnswer) {
-        return null;
-    } else {
-        $result[0]=$answer;
-        $result[1]=$correctAnswer;
-        return $result;
-    }
+    return check($answer,$correctAnswer);
 }
 
 function isEven(int $num): bool
 {
     return $num % 2 === 0;
 }
-
-function isValidAnswer(string $answer): bool
-{
-    return ($answer === POSITIVE_ANSWER || $answer === NEGATIVE_ANSWER);
-}
-
 
 function getCorrectAnswer(bool $isEven): string
 {
