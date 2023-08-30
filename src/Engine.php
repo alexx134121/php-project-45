@@ -28,7 +28,7 @@ function game(string $game): void
         }
         $i++;
     }
-    line("Congratulations, $userName");
+    line("Congratulations, $userName!");
     return;
 }
 
