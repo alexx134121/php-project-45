@@ -8,6 +8,7 @@ use function BrainGames\Engine\sendCongratulations;
 use function BrainGames\Engine\sendResult;
 use function cli\line;
 use function cli\prompt;
+
 use const BrainGames\Engine\COUNT_ROUND;
 
 function run(): void

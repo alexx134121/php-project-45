@@ -7,9 +7,9 @@ use function cli\prompt;
 
 const POSITIVE_ANSWER = 'yes';
 const NEGATIVE_ANSWER = 'no';
-const COUNT_ROUND=3;
+const COUNT_ROUND = 3;
 
-function sendResult(?array $result,string $userName): void
+function sendResult(?array $result, string $userName): void
 {
     if (is_null($result)) {
         line("Correct!");

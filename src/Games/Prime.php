@@ -9,9 +9,10 @@ use function BrainGames\Engine\sendResult;
 use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\check;
+
 use const BrainGames\Engine\COUNT_ROUND;
 
-const MAX_PRIME=3571;
+const MAX_PRIME = 3571;
 function run(): void
 {
     $answers = [];
