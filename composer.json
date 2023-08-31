@@ -4,14 +4,11 @@
     "type": "project",
     "license": "proprietary",
     "autoload": {
-        "psr-4": {
-            "Hexlet\\Code\\": "src/"
-        },
         "files": [
             "src/Cli.php",
-            "src/Games/EvenGames.php",
-            "src/Games/CalcGames.php",
-            "src/Games/GCDGame.php",
+            "src/Games/Even.php",
+            "src/Games/Calc.php",
+            "src/Games/GCD.php",
             "src/Games/Progression.php",
             "src/Games/Prime.php",
             "src/Engine.php"
