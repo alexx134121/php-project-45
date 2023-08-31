@@ -3,6 +3,7 @@
 namespace BrainGames\Games\Progression;
 
 use function BrainGames\Engine\getUserName;
+use function BrainGames\Engine\sendCongratulations;
 use function BrainGames\Engine\sendResult;
 use function cli\line;
 use function cli\prompt;
@@ -29,10 +30,11 @@ function run(): void
         $answers[1] = $answer;
         $result = check($answers);
         sendResult($result, $userName);
-        if (!is_null($result)){
+        if (!is_null($result)) {
             return;
         }
     }
+    sendCongratulations($userName);
 }
 
 function arithmeticProgression(int $initial, int $diff, int $length): array

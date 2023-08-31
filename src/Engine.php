@@ -45,3 +45,8 @@ function boolToStringAnswer(bool $val): string
 {
     return strtolower(($val) ? POSITIVE_ANSWER : NEGATIVE_ANSWER);
 }
+
+function sendCongratulations(string $userName): void
+{
+    line("Congratulations, $userName!");
+}

@@ -4,6 +4,7 @@ namespace BrainGames\Games\GCD;
 
 use function BrainGames\Engine\check;
 use function BrainGames\Engine\getUserName;
+use function BrainGames\Engine\sendCongratulations;
 use function BrainGames\Engine\sendResult;
 use function cli\prompt;
 use function cli\line;
@@ -28,6 +29,7 @@ function run(): void
             return;
         }
     }
+    sendCongratulations($userName);
 }
 
 function getGCD(int $a, int $b): int

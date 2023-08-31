@@ -5,6 +5,7 @@ namespace BrainGames\Games\Even;
 use function BrainGames\Engine\boolToStringAnswer;
 use function BrainGames\Engine\check;
 use function BrainGames\Engine\getUserName;
+use function BrainGames\Engine\sendCongratulations;
 use function BrainGames\Engine\sendResult;
 use function cli\line;
 use function cli\prompt;
@@ -29,6 +30,7 @@ function run(): void
             return;
         }
     }
+    sendCongratulations($userName);
 }
 
 function isEven(int $num): bool
