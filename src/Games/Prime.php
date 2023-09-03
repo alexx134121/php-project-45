@@ -18,7 +18,7 @@ function run(): void
         $val = rand(1, MAX_PRIME);
         $isPrime = isPrime($val);
         $correctAnswer = boolToStringAnswer($isPrime);
-        $question=strval($val);
+        $question = strval($val);
         $roundResult = roundGame($description, $question, $correctAnswer, $userName);
         if ($roundResult === false) {
             return;
