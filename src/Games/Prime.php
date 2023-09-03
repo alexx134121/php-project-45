@@ -15,7 +15,7 @@ function run(): void
     $userName = getUserName();
     for ($i = 0; $i < COUNT_ROUND; $i++) {
         $description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-        $question = rand(1, MAX_PRIME);
+        $question = strval(rand(1, MAX_PRIME));
         $isPrime = isPrime($question);
         $correctAnswer = boolToStringAnswer($isPrime);
         $roundResult = roundGame($description, $question, $correctAnswer, $userName);

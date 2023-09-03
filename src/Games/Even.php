@@ -15,7 +15,7 @@ function run(): void
     for ($i = 0; $i < COUNT_ROUND; $i++) {
         $num = rand(0, 100);
         $description = 'Answer "yes" if the number is even, otherwise answer "no".';
-        $question = $num;
+        $question = strval($num);
         $isEven = isEven($num);
         $correctAnswer = boolToStringAnswer($isEven);
         $roundResult = roundGame($description, $question, $correctAnswer, $userName);

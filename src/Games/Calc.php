@@ -27,12 +27,11 @@ function run(): void
     sendCongratulations($userName);
 }
 
-function calc(float $firstArg, float $secondArg, string $operation): ?float
+function calc(float $firstArg, float $secondArg, string $operation): float
 {
-    $result = match ($operation) {
+    return match ($operation) {
         '+' => $firstArg + $secondArg,
         '-' => $firstArg - $secondArg,
         '*' => $firstArg * $secondArg
     };
-    return $result;
 }
