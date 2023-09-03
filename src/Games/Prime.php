@@ -4,31 +4,22 @@ namespace BrainGames\Games\Prime;
 
 use function BrainGames\Engine\boolToStringAnswer;
 use function BrainGames\Engine\getUserName;
+use function BrainGames\Engine\roundGame;
 use function BrainGames\Engine\sendCongratulations;
-use function BrainGames\Engine\sendResult;
-use function cli\line;
-use function cli\prompt;
-use function BrainGames\Engine\check;
 
 use const BrainGames\Engine\COUNT_ROUND;
 
 const MAX_PRIME = 3571;
 function run(): void
 {
-    $answers = [];
     $userName = getUserName();
     for ($i = 0; $i < COUNT_ROUND; $i++) {
-        line('Answer "yes" if given number is prime. Otherwise answer "no".');
-        $a = rand(1, MAX_PRIME);
-        $isPrime = isPrime($a);
+        $description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+        $question = rand(1, MAX_PRIME);
+        $isPrime = isPrime($question);
         $correctAnswer = boolToStringAnswer($isPrime);
-        line("Question: $a");
-        $answer = strtolower(prompt("Your answer"));
-        $answers[0] = $correctAnswer;
-        $answers[1] = $answer;
-        $result = check($answers);
-        sendResult($result, $userName);
-        if (!is_null($result)) {
+        $roundResult = roundGame($description, $question, $correctAnswer, $userName);
+        if ($roundResult === false) {
             return;
         }
     }

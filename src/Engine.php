@@ -50,3 +50,19 @@ function sendCongratulations(string $userName): void
 {
     line("Congratulations, $userName!");
 }
+
+function roundGame(string $description, string $question, mixed $correctAnswer, string $userName): bool
+{
+    $answers = [];
+    line($description);
+    line("Question: $question");
+    $answer = prompt("Your answer");
+    $answers[0] = $correctAnswer;
+    $answers[1] = $answer;
+    $result = check($answers);
+    sendResult($result, $userName);
+    if (!is_null($result)) {
+        return false;
+    }
+    return true;
+}
