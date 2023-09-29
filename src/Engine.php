@@ -66,3 +66,16 @@ function roundGame(string $description, string $question, mixed $correctAnswer, 
     }
     return true;
 }
+function run(callable $game): void
+{
+    $userName = getUserName();
+    for ($i = 0; $i < COUNT_ROUND; $i++) {
+        [$description, $question, $answer] = $game();
+        $roundResult = roundGame($description, $question, $answer, $userName);
+        if ($roundResult === false) {
+            return;
+        }
+    }
+    sendCongratulations($userName);
+    return;
+}

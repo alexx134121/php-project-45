@@ -3,27 +3,21 @@
 namespace BrainGames\Games\Even;
 
 use function BrainGames\Engine\boolToStringAnswer;
-use function BrainGames\Engine\getUserName;
-use function BrainGames\Engine\roundGame;
-use function BrainGames\Engine\sendCongratulations;
-
-use const BrainGames\Engine\COUNT_ROUND;
+use function BrainGames\Engine\run as game;
 
 function run(): void
 {
-    $userName = getUserName();
-    for ($i = 0; $i < COUNT_ROUND; $i++) {
-        $num = rand(0, 100);
-        $description = 'Answer "yes" if the number is even, otherwise answer "no".';
-        $question = strval($num);
-        $isEven = isEven($num);
-        $correctAnswer = boolToStringAnswer($isEven);
-        $roundResult = roundGame($description, $question, $correctAnswer, $userName);
-        if ($roundResult === false) {
-            return;
-        }
-    }
-    sendCongratulations($userName);
+    game(fn() => getData());
+}
+
+function getData(): array
+{
+    $num = rand(0, 100);
+    $description = 'Answer "yes" if the number is even, otherwise answer "no".';
+    $question = strval($num);
+    $isEven = isEven($num);
+    $correctAnswer = boolToStringAnswer($isEven);
+    return [$description, $question, $correctAnswer];
 }
 
 function isEven(int $num): bool
